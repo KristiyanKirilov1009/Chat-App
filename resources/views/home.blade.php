@@ -19,6 +19,7 @@
     <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
 
     <link rel="stylesheet" href="{{asset('css/tailwind2.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fonts/remixicon.css')}}">
 </head>
 
 <body>
@@ -44,6 +45,7 @@
     
         <!-- Start side-menu nav -->
         <!-- Tabs -->
+        {{--
         <div class="w-full mx-auto lg:my-auto">
             <ul id="tabs" class="flex flex-row justify-center w-full lg:flex-col lg:flex nav-tabs">
                 <li class="flex-grow lg:flex-grow-0">
@@ -93,17 +95,19 @@
                 </li>
             </ul>
         </div>
-    
+        --}}
         <div class="w-20 my-5 lg:w-auto">
             <ul class="lg:block">
-                <li class="hidden text-center light-dark-mode nav-item lg:block">
-                    <a href="#" class="hidden dark:block dark:text-violet-100/80">
-                        <i class="text-2xl ri-sun-line "></i>
-                    </a>
-                    <a href="#" class="block text-gray-500 dark:hidden">
-                        <i class="text-2xl ri-moon-clear-line"></i>
-                    </a>
-                </li>
+                {{--
+                    <li class="hidden text-center light-dark-mode nav-item lg:block">
+                        <a href="#" class="hidden dark:block dark:text-violet-100/80">
+                            <i class="text-2xl ri-sun-line "></i>
+                        </a>
+                        <a href="#" class="block text-gray-500 dark:hidden">
+                            <i class="text-2xl ri-moon-clear-line"></i>
+                        </a>
+                    </li> 
+                --}}
     
                 <li class="relative lg:mt-4 dropdown lg:dropup">
                     <a href="#" class="dropdown-toggle" id="dropdownButton2" data-bs-toggle="dropdown">
@@ -124,10 +128,11 @@
                 </li>
             </ul>
         </div>
-    
+        
     </div>    <!-- end left sidebar-menu -->
 
     <!-- switcher -->
+     {{-- 
     <div class="fixed transition-all duration-300 ease-linear top-[50%] switcher z-50" id="style-switcher">
         <div class="w-48 p-4 bg-white shadow-md dark:bg-zinc-700">
             <div>
@@ -144,20 +149,9 @@
                     </li>
                 </ul>
             </div>
-    
-            <div class="mt-5 mb-2">
-                <h3 class="mb-3 font-medium text-gray-900 text-14 dark:text-gray-100">RTL / LTR</h3>
-                <a href="javascript: void(0);" id="ltr-rtl" class="z-50 px-3 py-3 my-2 font-medium text-white transition-all duration-300 ease-linear group-data-[theme-color=violet]:bg-violet-500 group-data-[theme-color=red]:bg-red-500 group-data-[theme-color=green]:bg-green-500 text-14 hover:bg-violet-700 rounded" onclick="changeMode(event)">
-                    <span class="ltr:hidden">LTR</span>
-                    <span class="rtl:hidden">RTL</span>
-                </a>
-            </div>
         </div>
     </div>
-    <!-- light-dark mode button -->
-    <a href="javascript: void(0);" onclick="toggleSwitcher()" class="fixed z-50 flex-col gap-3 px-4 py-3 ltr:right-0 rtl:left-0 font-normal text-white group-data-[theme-color=violet]:bg-violet-500 group-data-[theme-color=red]:bg-red-500 group-data-[theme-color=green]:bg-green-500 top-[44%] text-14 ltr:rounded-l rtl:rounded-r hidden lg:block">
-        <i class="text-xl mdi mdi-cog mdi-spin"></i>
-    </a>
+    --}}
     <!-- start chat-leftsidebar -->
     <div class="chat-leftsidebar lg:w-[380px] group-data-[theme-color=violet]:bg-slate-50 group-data-[theme-color=green]:bg-green-50/20 group-data-[theme-color=red]:bg-red-50/20 shadow overflow-y-hidden mb-[80px] lg:mb-0 group-data-[theme-color=violet]:dark:bg-zinc-700 group-data-[theme-color=green]:dark:bg-zinc-700 group-data-[theme-color=red]:dark:bg-zinc-700">
         <div>
@@ -428,7 +422,7 @@
                             <span class="group-data-[theme-color=violet]:bg-slate-100 group-data-[theme-color=green]:bg-green-50 group-data-[theme-color=red]:bg-red-50 pe-1 ps-3 group-data-[theme-color=violet]:dark:bg-zinc-600 group-data-[theme-color=green]:dark:bg-zinc-600 group-data-[theme-color=red]:dark:bg-zinc-600" id="basic-addon1">
                                 <i class="text-lg text-gray-400 ri-search-line search-icon dark:text-gray-200"></i>
                             </span>
-                            <input type="text" class="border-0 group-data-[theme-color=violet]:bg-slate-100 group-data-[theme-color=green]:bg-green-50 group-data-[theme-color=red]:bg-red-50 placeholder:text-[14px] focus:ring-offset-0 focus:outline-none focus:ring-0 group-data-[theme-color=violet]:dark:bg-zinc-600 group-data-[theme-color=green]:dark:bg-zinc-600 group-data-[theme-color=red]:dark:bg-zinc-600 placeholder:text-gray-400" placeholder="Search messages or users" aria-label="Search messages or users" aria-describedby="basic-addon1">
+                            <input type="text" class="border-0 group-data-[theme-color=violet]:bg-slate-100 group-data-[theme-color=green]:bg-green-50 group-data-[theme-color=red]:bg-red-50 placeholder:text-[14px] focus:ring-offset-0 focus:outline-none focus:ring-0 group-data-[theme-color=violet]:dark:bg-zinc-600 group-data-[theme-color=green]:dark:bg-zinc-600 group-data-[theme-color=red]:dark:bg-zinc-600 placeholder:text-gray-400 dark:text-gray-50" placeholder="Search messages or users" aria-label="Search messages or users" aria-describedby="basic-addon1">
                         </div>
                     </div>
                 
