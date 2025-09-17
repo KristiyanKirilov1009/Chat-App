@@ -268,7 +268,7 @@ return !$message->created_at->isToday();
                                         <!--The color of the bubble -->
                                         <div class="relative order-2 px-5 py-3 text-gray-700 rounded-lg ltr:rounded-br-none rtl:rounded-bl-none bg-gray-50 dark:bg-zinc-700 dark:text-gray-50">
 
-                                            <p class="mb-0">
+                                            <p class="mb-0" id="messageToCopy">
                                                 {{$message->text}}
                                             </p>
                                             <p class="mt-1 mb-0 text-xs text-left text-gray-500 dark:text-gray-300"><i class="align-middle ri-time-line"></i> <span class="align-middle">{{$message->created_at->format('H:i')}}</span></p>
@@ -277,9 +277,9 @@ return !$message->created_at->isToday();
                                         </div>
 
                                         <div class="relative self-start order-1 dropstart">
-                                            <a class="p-0 text-gray-400 border-0 btn dropdown-toggle dark:text-gray-100" href="#" role="button" data-bs-toggle="dropdown" id="dropdownMenuButton13">
+                                            <button class="p-0 text-gray-400 border-0 btn dropdown-toggle dark:text-gray-100" data-bs-toggle="dropdown" id="dropdownMenuButton13">
                                                 <i class="ri-more-2-fill"></i>
-                                            </a>
+                                            </button>
                                             <div class="absolute z-50 hidden py-2 my-6 text-left list-none bg-white border-none rounded shadow-lg ltr:right-auto ltr:left-0 xl:ltr:right-0 xl:ltr:left-auto rtl:right-0 rtl:left-auto xl:rtl:left-0 xl:rtl:right-auto dropdown-menu w-36 bg-clip-padding dark:bg-zinc-700" aria-labelledby="dropdownMenuButton13">
                                                 <button class="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/50 dark:text-gray-100 dark:hover:bg-zinc-600 ltr:text-left rtl:text-right copy-btn" data-message="{{$message->text}}">Copy <i class="text-gray-500 rtl:float-left ltr:float-right dark:text-gray-200 ri-file-copy-line"></i></button>
                                                 {{--
@@ -936,13 +936,12 @@ return !$message->created_at->isToday();
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.copy-btn');
 
-        if (!btn) return;
+        if (!btn) return
         const text = btn.dataset.message;
         navigator.clipboard.writeText(text)
             .then(() => alert('Copied!'))
             .catch(() => alert('Copy failed!'));
     });
-
 
     window.Echo.private('chat.' + chatRoomId)
         .listen('.sent', e => {
@@ -1061,5 +1060,5 @@ return !$message->created_at->isToday();
             document.getElementById('latest-message').textContent = authUser == e.sender.id ? 'You: ' + e.text : e.text;
             document.getElementById('latest-message-date').textContent = `${new Intl.DateTimeFormat('en-US', {hour: '2-digit', minute: '2-digit', hour12: false}).format(e.created_at)}, ${new Intl.DateTimeFormat('en-US', {month: 'short', day: '2-digit'}).format(e.created_at)}`;
         });
-        
+
 </script>
